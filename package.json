@@ -1,0 +1,24 @@
+{
+  "name": "node-freebase"
+  ,"description": "query freebase.com data form node or the browser"
+  ,"version": "1.0.0"
+  ,"homepage": "http://github.com/luciotato/node-freenode"
+  ,"license" : "Creative Commons, MIT"
+  ,"bugs": "http://github.com/luciotato/node-freenode/issues"
+  ,"repository": {
+    "type": "git"
+    ,"url": "git://github.com/luciotato/node-freenode.git"
+  }
+  ,"author": {
+    "name": "Lucio Tato"
+    ,"email": "luciotato@gmail.com"
+    ,"url":"http://github.com/luciotato"
+  }
+ ,"main": "main.js"
+ ,"engines": [ "node >= 0.3.6"]
+ ,"scripts": {
+    "minify": "node minify"
+    ,"min": "node minify"
+    ,"test": "node tests"
+  }
+}

@@ -1,0 +1,77 @@
+<html>
+<head>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script src="async.js"></script>
+<script src="node-freebase.min.js"></script>
+
+<style>
+body
+    {
+    font-family:"Helvetica","Univers","Helvetica Neue",arial,helvetica,sans-serif;
+    font-size:22px;
+    color:#808080;
+    margin:20px;
+    }
+
+a
+    {
+    color:steelblue;
+    }
+
+input
+    {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    padding:10px;
+    margin:10px;
+    }
+
+#pad
+    {
+    position:relative;
+    width:500px; height:50px;
+    font-size:17px; color:gray;
+     }
+
+</style>
+
+<script>
+
+function init()
+{
+    //bind event
+    $("#pad").keypress(pad_keypressed);
+}
+
+function pad_keypressed(e)
+{
+    if (e.keyCode===13)
+    {
+        var q=$("#pad").val();
+        if (q)
+        {
+            console.log(q);
+            freebase.sentence(q,{}
+                , function(resp) {
+                    $("#answer").html(resp);
+                });
+        }
+    }
+}
+
+//call init on doc.ready
+$(document).ready(init);
+
+</script>
+</head>
+
+<body>
+
+  <h3>search freebase</h3>
+  <input type="text" id="pad" />
+  <div id="answer"></div>
+
+</body>
+</html>

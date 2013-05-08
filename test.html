@@ -1,0 +1,21 @@
+<html>
+    
+ <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+ <script src="node_modules/async/lib/async.js"></script>
+ <script src="client_side/freebase_client.js"></script>
+  
+  <script>
+  $(document).ready(function()
+    {
+    freebase.sentence("tony hawk",{}
+        ,function(r){
+            $('body').append(r);
+        });
+  });
+</script>
+<body>
+    Queriyng Frebase...
+    <br>
+</body>
+</html>
