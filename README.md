@@ -2,36 +2,30 @@ node-freebase
 =============
 
 Stripped version of  spencermountain/Freebase.js - small changes
-  - simplified
   - grunt removed
   - cloud9 compatible - https://c9.io/luciotato/node-freebase/workspace/client_side/index.html
 
-TO DO:
-  - check usage form node
-  - remove undesrcore.js
+  
+## Minify
+
+```
+    //To create client_side/node-freebase.min.js
+    npm run min
+```
+
+## Tests
+    npm test
 
 
 <hr>
-
 
 [Freebase](http://freebase.com/) is a very masculine but complicated human-curated database.
 
 [Nodejs](http://nodejs.org/) is a straight-talkin language that takes no guff
 
-## Minify
 
-```
-    //To create client_side/node-freebase.min.js
-    npm run-script minify
-```
+## Usage
 
-## Not yet - Install
-
-```javascript
-    npm install node-freebase
-```
-
-then:
 ```javascript
     var freebase=require('node-freebase');
     freebase.description('tom cruise', [options], [callback])

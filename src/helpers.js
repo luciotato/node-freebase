@@ -80,13 +80,10 @@ fns.settle_params = function(params, method, defaults) {
   }
   //remove whitespace
   o.q = o.q.replace(/  /, ' ');
-  o.q = o.q.replace(/^\s+|\s+$/, '');
+  //o.q = o.q.replace(/^\s+|\s+$/, ''); - if u had a problem, and solved by regexp, now u have 2 problems
   //if it's a url, clean it up
-  if (o.q.match(/^(https?:\/\/|www\.)/)) {
-    o.q = o.q.replace(/\/$/, '');
-    o.q = o.q.replace(/^https/, 'http');
-    o.url = true;
-  }
+  if (o.q.toLowerCase().indexOf('http') === 0 ) { o.url = true; o.q = o.q.replace(/^https/, 'http');}
+  if (o.q.toLowerCase().indexOf('www.') === 0 ) o.url = true;
   o.valid = true;
   return o;
 };
